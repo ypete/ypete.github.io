@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+@font-face {
+    font-family: pkmn;
+    src: url(PKMN.ttf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    margin: auto 0;
+    background: steelblue;
+    color: rgba(240, 248, 255, 0.8);
+}
+a {
+    text-decoration: none;
+}
+#content span, #fact p {
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: pkmn;
+}
+#fact p {
+    font-size: 1.15em;
+}
+strong.glow {
+    background: linear-gradient(to right, steelblue, whitesmoke);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 200% 100%;
+    color: transparent;
+    animation: glow 5s linear infinite;
+    -webkit-animation: glow 5s linear infinite;
+}
+h1 strong {
+    font-size: 2.5em;
+    background: linear-gradient(to right, steelblue, whitesmoke);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 250% 100%;
+    color: transparent;
+    animation: glow 5s linear infinite;
+    -webkit-animation: glow 5s linear infinite;
+}
+h2 {
+    font-size: 2em;
+}
+#contact h2 {
+    margin: 10px;
+}
+nav {
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    background-color: steelblue;
+    z-index: 10;
+    box-shadow: 0 5px 35px 0px rgba(0,0,0,.075);
+}
+.icon_resize {
+    width: auto;
+    height: 240%;
+    vertical-align: middle;
+    padding-right: 15px;
+}
+#fact h2 {
+    margin-top: 42px;
+    margin-bottom: 13px;
+}
+section#content {
+    margin-top: 90px;
+}
+section#contact {
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+h1 {
+    margin: 0px;
+}
+nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    padding: 20px 25px;
+    line-height: 60px;
+    white-space: nowrap;
+    position: relative;
+    color: aliceblue;
+}
+nav a::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+nav a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+nav a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    height: 60px;
+    background: lightsteelblue;
+    z-index: -1;
+    transition: transform .4s ease;
+}
+
+.fa-brands {
+    border-radius: 35%;
+    margin: 0% 2% 5% 2%;
+    color: whitesmoke;
+    background-color: transparent;
+    transition: background-color 0.5s ease;
+}
+.fa-facebook {
+    padding: 2.57% 1.49%;
+}
+.fa-facebook:hover {
+    background-color: #4267B2;
+}
+.fa-instagram {
+    position: relative;
+    padding: 2.5% 1.56% 2.5% 1.56%;
+}
+.fa-instagram::after {
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    background: linear-gradient(to right, #fccc63, #b93ab9);
+    border-radius: 35%;
+    z-index: -1;
+    transition: opacity 0.5s ease;
+}
+.fa-instagram:hover::after {
+    opacity: 1;
+}
+.fa-discord {
+    padding: 2.5% 1.45%;
+}
+.fa-discord:hover {
+    background-color: #7289da;
+}
+button {
+    cursor: pointer;
+    border: 0;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+}
+.grid-item {
+    padding: 0px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.grid-item.left {
+    align-items: flex-end;
+}
+.grid-item.right {
+    align-items: flex-start;
+}
+.grid-item.left div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 10%;
+}
+.grid-item.right div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 10%;
+}
+.grid-item h2 {
+    position: absolute;
+    color: transparent;
+    -webkit-text-stroke: 0.75px lightsteelblue;
+}
+.grid-item .wave {
+    color: lightsteelblue;
+    animation: wave 3s ease-in-out infinite;
+    -webkit-animation: wave 3s ease-in-out infinite;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.85);
+}
+.pokemon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: top;
+    position: relative;
+    width: 40vw;
+    height: 500px;
+    font-family: pkmn;
+}
+.pokemon-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+}
+.pokemon-container .pokemon1 {
+    height: 63%;
+}
+.pokemon-container .pokemon2 {
+    height: 60%;
+    opacity: 0;
+}
+.pokemon-container:hover .pokemon1 {
+    opacity: 0;
+    z-index: -1; 
+}
+.pokemon-container:hover .pokemon2 {
+    opacity: 1;
+}
+.pokemon-container div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 65%);
+    color: black;
+    opacity: 0;
+}
+.pokemon-container h3 {
+    border: 4px double black;
+    border-radius: 5px;
+    background: white;
+    padding: 18px;
+    width: 400px;
+    text-align: left;
+}
+.pokemon-container:hover div {
+    opacity: 1;
+}
+.pokemon-container p img {
+    width: 3%;
+    transform: translate(-360%, 180%);
+}
+
+@keyframes glow {
+    0% {
+        background-position: 35% 50%;
+    }
+    25% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 50%;
+    }
+    75% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 35% 50%;
+    }
+}
+@-webkit-keyframes glow {
+    0% {
+        background-position: 35% 50%;
+    }
+    25% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 50%;
+    }
+    75% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 35% 50%;
+    }
+}
+
+@keyframes wave {
+    0%, 100% {
+        clip-path: polygon(
+            0% 45%,
+            16% 44%,
+            33% 50%,
+            54% 60%,
+            70% 61%,
+            84% 59%,
+            100% 52%,
+            100% 100%,
+            0% 100%
+        );
+    } 50% {
+        clip-path: polygon(
+            0% 60%,
+            15% 65%,
+            34% 66%,
+            51% 62%,
+            67% 50%,
+            84% 45%,
+            100% 46%,
+            100% 100%,
+            0% 100%
+        );
+    }
+}
+@-webkit-keyframes wave {
+    0%, 100% {
+        clip-path: polygon(
+            0% 45%,
+            16% 44%,
+            33% 50%,
+            54% 60%,
+            70% 61%,
+            84% 59%,
+            100% 52%,
+            100% 100%,
+            0% 100%
+        );
+    } 50% {
+        clip-path: polygon(
+            0% 60%,
+            15% 65%,
+            34% 66%,
+            51% 62%,
+            67% 50%,
+            84% 45%,
+            100% 46%,
+            100% 100%,
+            0% 100%
+        );
+    }
+}
